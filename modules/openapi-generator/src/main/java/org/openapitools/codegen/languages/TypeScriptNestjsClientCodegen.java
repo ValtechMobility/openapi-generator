@@ -170,6 +170,13 @@ public class TypeScriptNestjsClientCodegen extends AbstractTypeScriptClientCodeg
         additionalProperties.put("injectionToken", nestVersion.atLeast("4.0.0") ? "InjectionToken" : "OpaqueToken");
         additionalProperties.put("injectionTokenTyped", nestVersion.atLeast("4.0.0"));
         additionalProperties.put("useHttpClient", nestVersion.atLeast("4.3.0"));
+        additionalProperties.put("useNestjsAxios", nestVersion.atLeast("8.0.0"));
+        additionalProperties.put("nestjsAxiosVersion", "0.0.8");
+        if (nestVersion.atLeast("8.0.0")) {
+            additionalProperties.put("rxjsVersion", "7.1.0");
+        } else {
+            additionalProperties.put("rxjsVersion", "6.5.2");
+        }
         if (additionalProperties.containsKey(SERVICE_SUFFIX)) {
             serviceSuffix = additionalProperties.get(SERVICE_SUFFIX).toString();
             validateClassSuffixArgument("Service", serviceSuffix);

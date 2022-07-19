@@ -1,4 +1,4 @@
-## {{npmName}}@{{npmVersion}}
+## @openapitools/typescript-nestjs-petstore@1.0.0
 
 ### Building
 
@@ -15,7 +15,7 @@ In your Nestjs project:
 
 ```
 // without configuring providers
-import { ApiModule } from '{{npmName}}';
+import { ApiModule } from '@openapitools/typescript-nestjs-petstore';
 import { HttpModule } from '@nestjs/axios';
 
 @Module({
@@ -30,7 +30,7 @@ export class AppModule {}
 
 ```
 // configuring providers
-import { ApiModule, Configuration, ConfigurationParameters } from '{{npmName}}';
+import { ApiModule, Configuration, ConfigurationParameters } from '@openapitools/typescript-nestjs-petstore';
 
 export function apiConfigFactory (): Configuration => {
   const params: ConfigurationParameters = {
@@ -49,7 +49,7 @@ export class AppModule {}
 ```
 
 ```
-import { DefaultApi } from '{{npmName}}';
+import { DefaultApi } from '@openapitools/typescript-nestjs-petstore';
 
 export class AppComponent {
     constructor(private apiGateway: DefaultApi) { }
@@ -85,7 +85,7 @@ export class AppModule {
 If different than the generated base path, during app bootstrap, you can provide the base path to your service.
 
 ```
-import { BASE_PATH } from '{{npmName}}';
+import { BASE_PATH } from '@openapitools/typescript-nestjs-petstore';
 
 bootstrap(AppComponent, [
     { provide: BASE_PATH, useValue: 'https://your-web-service.com' },
@@ -94,7 +94,7 @@ bootstrap(AppComponent, [
 or
 
 ```
-import { BASE_PATH } from '{{npmName}}';
+import { BASE_PATH } from '@openapitools/typescript-nestjs-petstore';
 
 @Module({
     imports: [],
@@ -118,7 +118,7 @@ export const environment = {
 
 In the src/app/app.module.ts:
 ```
-import { BASE_PATH } from '{{npmName}}';
+import { BASE_PATH } from '@openapitools/typescript-nestjs-petstore';
 import { environment } from '../environments/environment';
 
 @Module({
